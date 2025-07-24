@@ -1,0 +1,2432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multi-vendor E-commerce Platform">
+    <title>dot valley</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../assets/frontend/css/vendor/all.min.css">
+    <link rel="stylesheet" href="../assets/frontend/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/frontend/css/vendor/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sadia-haque207/Techvalley@main/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sadia-haque207/Techvalley@main/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sadia-haque207/Techvalley@main/responsive.css">
+</head>
+<body>
+    
+    <!-- Topbar Start -->
+    <div class="topbar">
+        <div class="container topbar-container">
+            <div class="topbar-left">
+                <!-- Call Icon and Number -->
+                <div class="topbar-call">
+                    <a href="tel:+1234567890"><i class="fa fa-phone"></i> +1 234 567 890</a>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <!-- Currency Dropdown -->
+                <div class="dropdown topbar-dropdown">
+                    <button class="dropdown-toggle" id="currencyDropdown" data-toggle="dropdown">
+                        USD $
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="currencyDropdown">
+                        <li><a href="#">USD</a></li>
+                        <li><a href="#">BDT</a></li>
+                        <li><a href="#">Indian Rupee</a></li>
+                        <li><a href="#">Euro</a></li>
+                        <li><a href="#">YEN</a></li>
+                        <li><a href="#">Ringgit</a></li>
+                        <li><a href="#">Rand</a></li>
+                        <li><a href="#">Qatar</a></li>
+                    </ul>
+                </div>
+                    <!-- Language Dropdown -->
+                <div class="dropdown topbar-dropdown">
+                    <button class="dropdown-toggle" id="langDropdown" data-toggle="dropdown">
+                        <img src="../assets/frontend/images/topbar/en.png" alt="English" class="flag-icon">
+                        English
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu2" aria-labelledby="langDropdown">
+                        <li><a href="#"><img src="../assets/frontend/images/topbar/en.png" alt="English" class="flag-icon"> English</a></li>
+                        <li><a href="#"><img src="../assets/frontend/images/topbar/sa.png" alt="Arabic" class="flag-icon"> Arabic</a></li>
+                        <li><a href="#"><img src="../assets/frontend/images/topbar/bd.png" alt="Bangla" class="flag-icon"> Bangla</a></li>
+                        <li><a href="#"><img src="../assets/frontend/images/topbar/in.png" alt="Hindi" class="flag-icon"> Hindi</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Middle Topbar Start -->
+    <div class="middle-topbar">
+      <div class="container middle-topbar-container">
+        <!-- Hamburger for mobile -->
+        <button class="mobile-hamburger d-lg-none me-3" id="mobileHamburgerBtn" aria-label="Open menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <div class="logo">
+          <img src="../assets/frontend/images/logo.png" alt="dot valley Logo">
+        </div>
+        <form class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search for items...">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <div id="searchSuggestions" class="search-suggestions"></div>
+        </form>
+        <div class="topbar-actions">
+          <!-- <a href="#" class="action-btn menu-bar-btn" id="menuBarBtn" style="margin-right:10px;">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+          </a> -->
+            <a href="#" class="action-btn">
+                <i class="fa fa-heart"></i>
+                <span class="badge">0</span>
+            </a>
+            <div class="user-dropdown-wrapper">
+                <a href="#" class="action-btn user-btn">
+                    <i class="fa fa-user"></i>
+                </a>
+                <div class="user-dropdown">
+                    <a href="#"><i class="fa fa-sign-in-alt"></i> <span class="ms-2">Sign in</span></a>
+                    <a href="#" class="border-top"><i class="fa fa-user"></i> <span class="ms-2">Sign up</span></a>
+                </div>
+            </div>
+            <a href="#" class="action-btn cart-btn p-0 rounded-circle">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="badge">0</span>
+            </a>
+            <a href="#" class="cart-btn">
+                <span class="cart-label">My cart</span>
+                <br>
+                <span class="cart-total">$0.00 </span><i class="fas fa-caret-down ms-1"></i>
+            </a>
+        </div>
+        <!-- Cart Dropdown -->
+        <div class="cart-dropdown">
+            <div class="cart-dropdown-header">
+                <i class="fa fa-shopping-cart"></i> Shopping Cart
+            </div>
+            <div class="cart-dropdown-list">
+                <div class="cart-item-empty d-flex align-items-center justify-content-center py-5">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="ms-2">Your cart is empty</span>
+                </div>
+                <!--  product row, dynamically repeat this block for each product -->
+                <div class="cart-item">
+                    <img src="../assets/frontend/images/products/1.webp" alt="Product" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">Beauty Jelly Lipstick</div>
+                        <div class="cart-item-qty-price">
+                            <span class="item-qty-label">x<span class="item-qty">1</span></span>
+                            <span class="item-unit-price" data-unit="32.00">$32.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="cart-item-remove" style="display: none;"><i class="fa fa-trash"></i></button>
+                        <button class="qty-minus" style="display:none;">-</button>
+                        <span>1</span>
+                        <button class="qty-plus">+</button>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/frontend/images/products/2.webp" alt="Product" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">Beauty Jelly Lipstick</div>
+                        <div class="cart-item-qty-price">
+                            <span class="item-qty-label">x<span class="item-qty">1</span></span>
+                            <span class="item-unit-price" data-unit="32.00">$32.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="cart-item-remove" style="display: none;"><i class="fa fa-trash"></i></button>
+                        <button class="qty-minus" style="display:none;">-</button>
+                        <span>1</span>
+                        <button class="qty-plus">+</button>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/frontend/images/products/3.webp" alt="Product" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">Beauty Jelly Lipstick</div>
+                        <div class="cart-item-qty-price">
+                            <span class="item-qty-label">x<span class="item-qty">1</span></span>
+                            <span class="item-unit-price" data-unit="32.00">$32.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="cart-item-remove" style="display: none;"><i class="fa fa-trash"></i></button>
+                        <button class="qty-minus" style="display:none;">-</button>
+                        <span>1</span>
+                        <button class="qty-plus">+</button>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/frontend/images/products/3.webp" alt="Product" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">Beauty Jelly Lipstick</div>
+                        <div class="cart-item-qty-price">
+                            <span class="item-qty-label">x<span class="item-qty">1</span></span>
+                            <span class="item-unit-price" data-unit="32.00">$32.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="cart-item-remove" style="display: none;"><i class="fa fa-trash"></i></button>
+                        <button class="qty-minus" style="display:none;">-</button>
+                        <span>1</span>
+                        <button class="qty-plus">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-dropdown-footer">
+                <div class="cart-subtotal">
+                     <span>Subtotal: $32.00</span> <a href="#">Expand Cart</a>
+                </div>
+                <button class="cart-checkout-btn">Proceed To Checkout</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Drawer Overlay & Drawer Mobile Menu-->
+    <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+    <nav class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header d-flex align-items-center justify-content-between px-3 py-2">
+        <span class="fw-bold">Menu</span>
+        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-drawer-content px-2 pb-4">
+        <!-- Main Menu (unchanged) -->
+        <ul class="main-menu mt-4">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Brand</a></li>
+          <li class="has-dropdown">
+            <a href="#">Offers <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Flash Sale</a></li>
+              <li><a href="#">Mega Deals</a></li>
+              <li><a href="#">Clearance</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Publication House</a></li>
+          <li><a href="#">All Vendors</a></li>
+          <li class="has-dropdown">
+            <a href="#">Vendor Zone <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Become a Vendor</a></li>
+              <li><a href="#">Vendor Login</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Left Category Menu (unchanged) -->
+        <div class="left-category-menu">
+          <button class="category-toggle">
+            <i class="fa fa-th-large"></i> Categories <i class="fa fa-chevron-down"></i>
+          </button>
+          <ul class="category-list">
+            <li class="has-mega-menu">
+              <a href="#"><img src="../assets/frontend/images/products/1.webp" alt=""> Men's Fashion <i class="fa fa-angle-right"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li><a href="">Fashion Watches</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/1.webp" alt=""> Men's Fashion <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/2.webp" alt=""> Women's Fashion <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/3.webp" alt=""> Kid's Fashion <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/4.webp" alt=""> Health & Beauty <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#"><img src="../assets/frontend/images/products/1.webp" alt=""> WoMen's Fashion <i class="fa fa-angle-right"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-column">
+                  <h4>WoMen's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Middle Topbar End -->
+
+    <!-- Main Navigation & Slider Section Start -->
+    <div class="main-section">
+      <div class="container main-section-container">
+        <!-- Left Category Menu -->
+        <div class="left-category-menu">
+          <button class="category-toggle">
+            <i class="fa fa-th-large"></i> Categories <i class="fa fa-chevron-down"></i>
+          </button>
+          <ul class="category-list">
+            <li class="has-mega-menu">
+              <a href="#"><img src="../assets/frontend/images/products/1.webp" alt=""> Men's Fashion <i class="fa fa-angle-right"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li><a href="">Fashion Watches</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                    <li><a href="">Fashion Watches</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <a href=""><h4>Men's Watches</h4></a>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/1.webp" alt=""> Men's Fashion <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/2.webp" alt=""> Women's Fashion <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/3.webp" alt=""> Kid's Fashion <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/frontend/images/products/4.webp" alt=""> Health & Beauty <i class="fa fa-angle-right"></i></a>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#"><img src="../assets/frontend/images/products/1.webp" alt=""> Men's Fashion <i class="fa fa-angle-right"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Men's Watches</h4>
+                  <ul>
+                    <li>Fashion Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                    <li>Sports Watches</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Main Menu & Slider -->
+        <div class="main-content">
+          <!-- Main Menu -->
+          <ul class="main-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Brand</a></li>
+            <li class="has-dropdown">
+              <a href="#">Offers <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Flash Sale</a></li>
+                <li><a href="#">Mega Deals</a></li>
+                <li><a href="#">Clearance</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Publication House</a></li>
+            <li><a href="#">All Vendors</a></li>
+            <li class="has-dropdown">
+              <a href="#">Vendor Zone <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Become a Vendor</a></li>
+                <li><a href="#">Vendor Login</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Slider -->
+          <div class="main-slider">
+            <div class="slider-wrapper">
+              <div class="slide active">
+                <img src="../assets/frontend/images/products/back.png" alt="Slider 1">
+                <div class="slide-caption">
+                  <h2>Smart Home<br>Smart Savings!</h2>
+                  <p>Unmissable deals on all your home appliance needs.</p>
+                  <a href="#" class="btn btn-primary">Get Yours</a>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="../assets/frontend/images/products/1.jpg" alt="Slider 2">
+                <div class="slide-caption">
+                  <h2>Biggest Electronics Sale</h2>
+                  <p>Up to 50% off on top brands.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="../assets/frontend/images/products/back.png" alt="Slider 2">
+                <div class="slide-caption">
+                  <h2>Biggest Electronics Sale</h2>
+                  <p>Up to 50% off on top brands.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="../assets/frontend/images/products/1.jpg" alt="Slider 2">
+                <div class="slide-caption">
+                  <h2>Biggest Electronics Sale</h2>
+                  <p>Up to 50% off on top brands.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="../assets/frontend/images/products/back.png" alt="Slider 2">
+                <div class="slide-caption">
+                  <h2>Biggest Electronics Sale</h2>
+                  <p>Up to 50% off on top brands.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="slider-controls">
+              <span class="slider-dot active"></span>
+              <span class="slider-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Navigation & Slider Section End -->
+
+    <!-- Flash Deal Section Start -->
+    <section class="flash-deal-section">
+      <div class="container">
+        <div class="flash-deal-header">
+          <div>
+            <h2>FLASH DEAL</h2>
+            <p>Hurry Up! The offer is limited. Grab while it lasts</p>
+          </div>
+          <a href="#" class="flash-deal-viewall">View All &rarr;</a>
+        </div>
+        <div class="flash-deal-content">
+          <div class="flash-deal-timer">
+            <div class="timer-box"><span class="timer-value" id="flash-days">08</span><span class="timer-label">Days</span></div>
+            <span class="timer-sep">:</span>
+            <div class="timer-box"><span class="timer-value" id="flash-hours">12</span><span class="timer-label">Hours</span></div>
+            <span class="timer-sep">:</span>
+            <div class="timer-box"><span class="timer-value" id="flash-minutes">45</span><span class="timer-label">Minutes</span></div>
+            <span class="timer-sep">:</span>
+            <div class="timer-box"><span class="timer-value" id="flash-seconds">23</span><span class="timer-label">Seconds</span></div>
+          </div>
+          <div class="flash-deal-slider">
+            <div class="mobile-slider-arrow">
+              <button class="slider-arrow slider-arrow-left"><i class="fa fa-chevron-left"></i></button>
+              <button class="slider-arrow slider-arrow-right"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <button class="slider-arrow slider-arrow-left slider-arrow-left0"><i class="fa fa-chevron-left"></i></button>
+            <div class="flash-deal-products">
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <!-- <span class="product-eye"><i class="fa fa-eye"></i></span> -->
+                  <button class="deal-eye product-eye" data-modal-id="modal-3"><i class="fa fa-eye"></i></button>
+              </div>
+              <div id="modal-3" class="product-gallery-modal">
+                <div class="product-gallery-overlay"></div>
+                <div class="product-gallery-content product-details-modal-content">
+                  <button class="product-gallery-close" aria-label="Close">&times;</button>
+                  <div class="product-details-modal-row">
+                    <!-- Left: Gallery -->
+                    <div class="product-details-modal-gallery">
+                      <div class="product-gallery-main-img">
+                        <img src="../assets/frontend/images/products/1.webp" alt="Product Large" id="galleryLargeImg">
+                      </div>
+                      <div class="product-gallery-thumbnails">
+                        <img src="../assets/frontend/images/products/1.webp" alt="Thumb 1" class="gallery-thumb active" data-img="../assets/frontend/images/products/1.webp">
+                        <img src="../assets/frontend/images/products/2.webp" alt="Thumb 2" class="gallery-thumb" data-img="../assets/frontend/images/products/2.webp">
+                        <img src="../assets/frontend/images/products/3.webp" alt="Thumb 3" class="gallery-thumb" data-img="../assets/frontend/images/products/3.webp">
+                      </div>
+                    </div>
+                    <!-- Right: Details -->
+                    <div class="product-details-modal-info">
+                      <h3 class="product-title mb-3">iPhone 14 Pro Max</h3>
+                      <div class="product-meta mb-3">
+                        <span class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                          <span>(0)</span>
+                        </span>
+                        <span class="mx-2">|</span>
+                        <span class="product-reviews">0 Reviews</span>
+                        <span class="mx-2">|</span>
+                        <span class="product-orders">36 Orders</span>
+                        <span class="mx-2">|</span>
+                        <span class="product-wishlist">0 Wish Listed</span>
+                      </div>
+                      <div class="product-price mb-3">$1,149.00</div>
+                      <div class="product-options mb-3">
+                        <div class="mb-3 d-flex align-items-center">
+                          <span class="fw-semibold">Color:</span>
+                          <span class="color-swatch active ms-2"><i class="fa fa-check"></i></span>
+                          <span class="color-swatch"></span>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center">
+                          <span class="fw-semibold me-2">Quantity :</span>
+                          <div class="input-group quantity-group">
+                            <button class="btn btn-outline-secondary btn-sm quantity-minus">-</button>
+                            <input type="text" class="form-control form-control-sm text-center quantity-input" value="1">
+                            <button class="btn btn-outline-secondary btn-sm quantity-plus">+</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-total mb-3">
+                        <span class="fw-semibold">Total Price :</span>
+                        <span class="text-primary fw-bold">$1,206.45</span>
+                        <span class="text-muted ms-2">(Tax : $57.45)</span>
+                      </div>
+                      <div class="product-actions d-flex gap-2 mb-3">
+                        <button class="btn btn-warning fw-bold">Buy now</button>
+                        <button class="btn btn-primary fw-bold">Add to cart</button>
+                        <button class="btn btn-outline-secondary"><i class="fa fa-heart"></i> <span>0</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <button class="deal-eye product-eye" data-modal-id="modal-4"><i class="fa fa-eye"></i></button>
+              </div>
+              <div id="modal-4" class="product-gallery-modal">
+                <div class="product-gallery-overlay"></div>
+                <div class="product-gallery-content product-details-modal-content">
+                  <button class="product-gallery-close" aria-label="Close">&times;</button>
+                  <div class="product-details-modal-row">
+                    <!-- Left: Gallery -->
+                    <div class="product-details-modal-gallery">
+                      <div class="product-gallery-main-img">
+                        <img src="../assets/frontend/images/products/1.webp" alt="Product Large" id="galleryLargeImg">
+                      </div>
+                      <div class="product-gallery-thumbnails">
+                        <img src="../assets/frontend/images/products/1.webp" alt="Thumb 1" class="gallery-thumb active" data-img="../assets/frontend/images/products/1.webp">
+                        <img src="../assets/frontend/images/products/2.webp" alt="Thumb 2" class="gallery-thumb" data-img="../assets/frontend/images/products/2.webp">
+                        <img src="../assets/frontend/images/products/3.webp" alt="Thumb 3" class="gallery-thumb" data-img="../assets/frontend/images/products/3.webp">
+                      </div>
+                    </div>
+                    <!-- Right: Details -->
+                    <div class="product-details-modal-info">
+                      <h3 class="product-title mb-3">iPhone 14 Pro Max</h3>
+                      <div class="product-meta mb-3">
+                        <span class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                          <span>(0)</span>
+                        </span>
+                        <span class="mx-2">|</span>
+                        <span class="product-reviews">0 Reviews</span>
+                        <span class="mx-2">|</span>
+                        <span class="product-orders">36 Orders</span>
+                        <span class="mx-2">|</span>
+                        <span class="product-wishlist">0 Wish Listed</span>
+                      </div>
+                      <div class="product-price mb-3">$1,149.00</div>
+                      <div class="product-options mb-3">
+                        <div class="mb-3 d-flex align-items-center">
+                          <span class="fw-semibold">Color:</span>
+                          <span class="color-swatch active ms-2"><i class="fa fa-check"></i></span>
+                          <span class="color-swatch"></span>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center">
+                          <span class="fw-semibold me-2">Quantity :</span>
+                          <div class="input-group quantity-group">
+                            <button class="btn btn-outline-secondary btn-sm quantity-minus">-</button>
+                            <input type="text" class="form-control form-control-sm text-center quantity-input" value="1">
+                            <button class="btn btn-outline-secondary btn-sm quantity-plus">+</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-total mb-3">
+                        <span class="fw-semibold">Total Price :</span>
+                        <span class="text-primary fw-bold">$1,206.45</span>
+                        <span class="text-muted ms-2">(Tax : $57.45)</span>
+                      </div>
+                      <div class="product-actions d-flex gap-2 mb-3">
+                        <button class="btn btn-warning fw-bold">Buy now</button>
+                        <button class="btn btn-primary fw-bold">Add to cart</button>
+                        <button class="btn btn-outline-secondary"><i class="fa fa-heart"></i> <span>0</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <span class="product-eye"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <span class="product-eye"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <span class="product-eye"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <span class="product-eye"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <span class="product-eye"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="flash-deal-product-card">
+                  <div class="card-blur-content">
+                    <div class="product-img-wrapper">
+                      <img src="../assets/frontend/images/products/1.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                      <h3>iPhone 14 Pro Max</h3>
+                      <div class="product-price">$1,149.00</div>
+                    </div>
+                  </div>
+                  <span class="product-eye"><i class="fa fa-eye"></i></span>
+              </div>
+            </div>
+            <button class="slider-arrow slider-arrow-right slider-arrow-left0"><i class="fa fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Flash Deal Section End -->
+
+    <!-- Featured Product Section Start -->
+    <section class="featured-products-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+        <div class="featured-products-header">
+              <h2>Featured products</h2>
+              <a href="#">View All &rarr;</a>
+            </div>
+            <div class="swiper featured-products-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+                  <div class="swiper-slide">
+                    <!-- Product Card Example Start -->
+                    <div class="featured-product-card">
+                      <div class="featured-product-img-box mb-3 position-relative">
+                          <!-- Product Badge (optional) -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">-5.00$</span>
+                          <!-- Product Image -->
+                        <div class="featured-product-img-wrapper">
+                          <img src="../assets/frontend/images/products/1.webp" class="featured-product-img" alt="Product Name">
+                          <span class="product-eye"><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                      <div class="featured-product-title mt-2">Beauty Facial Cleanser</div>
+                      <div class="featured-product-price mb-2">$12.00</div>
+                    </div>
+                </div>
+              </div>
+              <!-- Swiper navigation buttons -->
+              <div class="swiper-button-next featured-button-next"></div>
+              <div class="swiper-button-prev featured-button-prev"></div>
+            </div>
+            <!-- Swiper pagination -->
+            <div class="swiper-pagination custom-featured-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Product Section End -->
+
+    <!-- Categories Section Start -->
+    <section class="category-section-unique my-5">
+      <div class="container py-5">
+        <div class="category-unique-header">
+          <h2>Shop by Category</h2>
+          <a href="#" class="category-unique-viewall">Browse All &rarr;</a>
+        </div>
+        <div class="category-unique-list py-3">
+          <div class="category-unique-card">
+            <a href="">
+              <div class="category-unique-icon">
+                <img src="../assets/frontend/images/products/1.webp" alt="Men's Fashion">
+              </div>
+            </a>
+            <div class="category-unique-info">
+              <div class="category-unique-title"><a href="">Men's Fashion</a></div>
+              <div class="category-unique-desc"><a href="">Shirts, pants, shoes & more</a></div>
+            </div>
+          </div>
+          <div class="category-unique-card">
+            <a href="">
+              <div class="category-unique-icon">
+                <img src="../assets/frontend/images/products/2.webp" alt="Women's Fashion">
+              </div>
+            </a>
+            <div class="category-unique-info">
+              <div class="category-unique-title"><a href="">Women's Fashion</a></div>
+              <div class="category-unique-desc"><a href="">Dresses, tops, accessories</a></div>
+            </div>
+          </div>
+          <div class="category-unique-card">
+            <a href="">
+              <div class="category-unique-icon">
+                <img src="../assets/frontend/images/products/3.webp" alt="Kid's Fashion">
+              </div>
+            </a>
+            <div class="category-unique-info">
+              <div class="category-unique-title"><a href="">Kid's Fashion</a></div>
+              <div class="category-unique-desc"><a href="">Trendy & comfy for kids</a></div>
+            </div>
+          </div>
+          <div class="category-unique-card">
+            <div class="category-unique-icon">
+              <img src="../assets/frontend/images/products/4.webp" alt="Health & Beauty">
+            </div>
+            <div class="category-unique-info">
+              <div class="category-unique-title">Health & Beauty</div>
+              <div class="category-unique-desc">Skincare, wellness, more</div>
+            </div>
+          </div>
+          <div class="category-unique-card">
+            <div class="category-unique-icon">
+              <img src="../assets/frontend/images/products/4.webp" alt="Health & Beauty">
+            </div>
+            <div class="category-unique-info">
+              <div class="category-unique-title">Health & Beauty</div>
+              <div class="category-unique-desc">Skincare, wellness, more</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Featured Deal Section Start -->
+    <section class="featured-deal-section">
+      <div class="container">
+        <div class="section-header mb-4">
+          <div>
+            <h2 class="mb-1">Featured Deal</h2>
+            <p class="mb-0">Discover top deals handpicked for you!</p>
+          </div>
+          <a href="#" class="flash-deal-viewall">View All &rarr;</a>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="deal-card">
+              <span class="deal-badge bg-success text-white">Save $20</span>
+              <div class="deal-img-wrapper product-img-wrapper">
+                <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                <div class="img-hover-overlay"></div>
+                <button class="deal-eye eye-btn" data-modal-id="modal-1"><i class="fa fa-eye"></i></button>
+              </div>
+              <h5><a href="">Smart LED TV</a></h5>
+              <div class="deal-desc">Crystal clear display, 4K UHD</div>
+              <div class="deal-prices">
+                <span class="deal-old-price">$499.00</span>
+                <span class="deal-new-price">$479.00</span>
+              </div>
+              <a href="" class="btn btn-primary">Shop Now</a>
+            </div>
+          </div>
+          <div id="modal-1" class="product-gallery-modal">
+            <div class="product-gallery-overlay"></div>
+            <div class="product-gallery-content product-details-modal-content">
+              <button class="product-gallery-close" aria-label="Close">&times;</button>
+              <div class="product-details-modal-row">
+                <!-- Left: Gallery -->
+                <div class="product-details-modal-gallery">
+                  <div class="product-gallery-main-img">
+                    <img src="../assets/frontend/images/products/1.webp" alt="Product Large" id="galleryLargeImg">
+                  </div>
+                  <div class="product-gallery-thumbnails">
+                    <img src="../assets/frontend/images/products/1.webp" alt="Thumb 1" class="gallery-thumb active" data-img="../assets/frontend/images/products/1.webp">
+                    <img src="../assets/frontend/images/products/2.webp" alt="Thumb 2" class="gallery-thumb" data-img="../assets/frontend/images/products/2.webp">
+                    <img src="../assets/frontend/images/products/3.webp" alt="Thumb 3" class="gallery-thumb" data-img="../assets/frontend/images/products/3.webp">
+                  </div>
+                </div>
+                <!-- Right: Details -->
+                <div class="product-details-modal-info">
+                  <h3 class="product-title mb-3">iPhone 14 Pro Max</h3>
+                  <div class="product-meta mb-3">
+                    <span class="product-rating">
+                      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                      <span>(0)</span>
+                    </span>
+                    <span class="mx-2">|</span>
+                    <span class="product-reviews">0 Reviews</span>
+                    <span class="mx-2">|</span>
+                    <span class="product-orders">36 Orders</span>
+                    <span class="mx-2">|</span>
+                    <span class="product-wishlist">0 Wish Listed</span>
+                  </div>
+                  <div class="product-price mb-3">$1,149.00</div>
+                  <div class="product-options mb-3">
+                    <div class="mb-3 d-flex align-items-center">
+                      <span class="fw-semibold">Color:</span>
+                      <span class="color-swatch active ms-2"><i class="fa fa-check"></i></span>
+                      <span class="color-swatch"></span>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                      <span class="fw-semibold me-2">Quantity :</span>
+                      <div class="input-group quantity-group">
+                        <button class="btn btn-outline-secondary btn-sm quantity-minus">-</button>
+                        <input type="text" class="form-control form-control-sm text-center quantity-input" value="1">
+                        <button class="btn btn-outline-secondary btn-sm quantity-plus">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-total mb-3">
+                    <span class="fw-semibold">Total Price :</span>
+                    <span class="text-primary fw-bold">$1,206.45</span>
+                    <span class="text-muted ms-2">(Tax : $57.45)</span>
+                  </div>
+                  <div class="product-actions d-flex gap-2 mb-3">
+                    <button class="btn btn-warning fw-bold">Buy now</button>
+                    <button class="btn btn-primary fw-bold">Add to cart</button>
+                    <button class="btn btn-outline-secondary"><i class="fa fa-heart"></i> <span>0</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="deal-card">
+              <span class="deal-badge bg-warning text-dark">15% OFF</span>
+              <div class="deal-img-wrapper product-img-wrapper">
+                <img src="../assets/frontend/images/products/2.webp" alt="Notebook Laptops" class="product-img">
+                <div class="img-hover-overlay"></div>
+                <button class="deal-eye eye-btn" data-modal-id="modal-2"><i class="fa fa-eye"></i></button>
+              </div>
+              <h5>Wireless Headphones</h5>
+              <div class="deal-desc">Noise cancelling, 30h battery</div>
+              <div class="deal-prices">
+                <span class="deal-old-price">$120.00</span>
+                <span class="deal-new-price">$102.00</span>
+              </div>
+              <button class="btn btn-primary">Shop Now</button>
+            </div>
+          </div>
+          <div id="modal-2" class="product-gallery-modal">
+            <div class="product-gallery-overlay"></div>
+            <div class="product-gallery-content product-details-modal-content">
+              <button class="product-gallery-close" aria-label="Close">&times;</button>
+              <div class="product-details-modal-row">
+                <!-- Left: Gallery -->
+                <div class="product-details-modal-gallery">
+                  <div class="product-gallery-main-img">
+                    <img src="../assets/frontend/images/products/1.webp" alt="Product Large" id="galleryLargeImg">
+                  </div>
+                  <div class="product-gallery-thumbnails">
+                    <img src="../assets/frontend/images/products/1.webp" alt="Thumb 1" class="gallery-thumb active" data-img="../assets/frontend/images/products/1.webp">
+                    <img src="../assets/frontend/images/products/2.webp" alt="Thumb 2" class="gallery-thumb" data-img="../assets/frontend/images/products/2.webp">
+                    <img src="../assets/frontend/images/products/3.webp" alt="Thumb 3" class="gallery-thumb" data-img="../assets/frontend/images/products/3.webp">
+                  </div>
+                </div>
+                <!-- Right: Details -->
+                <div class="product-details-modal-info">
+                  <h3 class="product-title mb-3">iPhone 14 Pro Max</h3>
+                  <div class="product-meta mb-3">
+                    <span class="product-rating">
+                      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                      <span>(0)</span>
+                    </span>
+                    <span class="mx-2">|</span>
+                    <span class="product-reviews">0 Reviews</span>
+                    <span class="mx-2">|</span>
+                    <span class="product-orders">36 Orders</span>
+                    <span class="mx-2">|</span>
+                    <span class="product-wishlist">0 Wish Listed</span>
+                  </div>
+                  <div class="product-price mb-3">$1,149.00</div>
+                  <div class="product-options mb-3">
+                    <div class="mb-3 d-flex align-items-center">
+                      <span class="fw-semibold">Color:</span>
+                      <span class="color-swatch active ms-2"><i class="fa fa-check"></i></span>
+                      <span class="color-swatch"></span>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                      <span class="fw-semibold me-2">Quantity :</span>
+                      <div class="input-group quantity-group">
+                        <button class="btn btn-outline-secondary btn-sm quantity-minus">-</button>
+                        <input type="text" class="form-control form-control-sm text-center quantity-input" value="1">
+                        <button class="btn btn-outline-secondary btn-sm quantity-plus">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-total mb-3">
+                    <span class="fw-semibold">Total Price :</span>
+                    <span class="text-primary fw-bold">$1,206.45</span>
+                    <span class="text-muted ms-2">(Tax : $57.45)</span>
+                  </div>
+                  <div class="product-actions d-flex gap-2 mb-3">
+                    <button class="btn btn-warning fw-bold">Buy now</button>
+                    <button class="btn btn-primary fw-bold">Add to cart</button>
+                    <button class="btn btn-outline-secondary"><i class="fa fa-heart"></i> <span>0</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="deal-card">
+              <span class="deal-badge bg-danger text-white">Save $10</span>
+              <div class="deal-img-wrapper product-img-wrapper">
+                <img src="../assets/frontend/images/products/3.webp" alt="Notebook Laptops" class="product-img">
+                <div class="img-hover-overlay"></div>
+                <button class="deal-eye eye-btn" data-modal-id="modal-1"><i class="fa fa-eye"></i></button>
+              </div>
+              <h5>Fitness Tracker</h5>
+              <div class="deal-desc">Heart rate, sleep monitor</div>
+              <div class="deal-prices">
+                <span class="deal-old-price">$59.00</span>
+                <span class="deal-new-price">$49.00</span>
+              </div>
+              <button class="btn btn-primary">Shop Now</button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="deal-card">
+              <span class="deal-badge bg-info text-white">New Deal</span>
+              <div class="deal-img-wrapper product-img-wrapper">
+                <img src="../assets/frontend/images/products/4.webp" alt="Notebook Laptops" class="product-img">
+                <div class="img-hover-overlay"></div>
+                <button class="deal-eye eye-btn" data-modal-id="modal-1"><i class="fa fa-eye"></i></button>
+              </div>
+              <h5>Air Purifier</h5>
+              <div class="deal-desc">HEPA filter, quiet mode</div>
+              <div class="deal-prices">
+                <span class="deal-old-price">$199.00</span>
+                <span class="deal-new-price">$179.00</span>
+              </div>
+              <button class="btn btn-primary">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Deal Section End -->
+
+    <!-- Clearance Sale Section Start -->
+    <section class="clearance-sale-section my-5">
+      <div class="container">
+        <div class="clearance-sale-header d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <div class="clearance-sale-title-bg" style="background-image: url(../assets/frontend/images/clearance/clearance-sale-title-bg.svg);">
+                <h2 class="sub-title mb-0">
+                    <span>Save More</span>
+                </h2>
+                <h3 class="title mb-0">
+                    <span>Clearance Sale</span>
+                </h3>
+            </div>
+        </div>
+          <a href="#" class="flash-deal-viewall">View All <span>&#8594;</span></a>
+        </div>
+        <div class="swiper clearance-swiper py-3">
+          <div class="swiper-wrapper">
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-button-next clearance-swiper-next"></div>
+          <div class="swiper-button-prev clearance-swiper-prev"></div>
+          <div class="swiper-pagination clearance-swiper-pagination"></div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Clearance Sale Section End -->
+
+    <!-- Image section Start  -->
+     <div class="img-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 px-0">
+            <div>
+              <a href="">
+                <img src="../assets/frontend/images/imgsection/bg.webp" alt="Img" class="img-fluid">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    <!-- Image section End  -->
+
+    <!-- Top Sellers Section Start -->
+    <section class="top-sellers-section mt-5">
+      <div class="container">
+        <div class="top-sellers-header">
+          <h2>Top Sellers</h2>
+          <a href="#" class="flash-deal-viewall">View All &rarr;</a>
+        </div>
+        <div class="top-sellers-list">
+          <!-- Seller Card -->
+          <div class="seller-card seller-card-blue">
+            <div class="seller-card-banner">
+              <img src="../assets/frontend/images/top-sellers/1.webp" alt="Book Store Banner">
+            </div>
+            <div class="seller-card-info">
+              <div class="seller-card-logo">
+                <img src="../assets/frontend/images/products/1.webp" alt="Book Store Logo">
+              </div>
+              <div>
+                <div class="seller-card-title">Book Store</div>
+                <div class="seller-card-rating">
+                  <span class="rating-value">4.5</span>
+                  <span class="star">&#9733;</span>
+                  <span class="rating-label">Rating</span>
+                </div>
+              </div>
+            </div>
+            <div class="seller-card-meta">
+              <span><b>2</b> Reviews</span>
+              <span><b>19</b> Products</span>
+            </div>
+          </div>
+          <!-- Seller Card -->
+          <div class="seller-card seller-card-gold">
+            <div class="seller-card-banner">
+              <img src="../assets/frontend/images/top-sellers/1.webp" alt="Golden Jewellery Banner">
+            </div>
+            <div class="seller-card-info">
+              <div class="seller-card-logo">
+                <img src="../assets/frontend/images/products/2.webp" alt="Golden Jewellery Logo">
+              </div>
+              <div>
+                <div class="seller-card-title">Golden Jewellery</div>
+                <div class="seller-card-rating">
+                  <span class="rating-value">3.0</span>
+                  <span class="star">&#9733;</span>
+                  <span class="rating-label">Rating</span>
+                </div>
+              </div>
+            </div>
+            <div class="seller-card-meta">
+              <span><b>1</b> Reviews</span>
+              <span><b>17</b> Products</span>
+            </div>
+          </div>
+          <!-- Seller Card -->
+          <div class="seller-card seller-card-orange">
+            <div class="seller-card-banner">
+              <img src="../assets/frontend/images/top-sellers/1.webp" alt="FootFinds Banner">
+            </div>
+            <div class="seller-card-info">
+              <div class="seller-card-logo">
+                <img src="../assets/frontend/images/products/3.webp" alt="FootFinds Logo">
+              </div>
+              <div>
+                <div class="seller-card-title">FootFinds</div>
+                <div class="seller-card-rating">
+                  <span class="rating-value">5.0</span>
+                  <span class="star">&#9733;</span>
+                  <span class="rating-label">Rating</span>
+                </div>
+              </div>
+            </div>
+            <div class="seller-card-meta">
+              <span><b>1</b> Reviews</span>
+              <span><b>13</b> Products</span>
+            </div>
+          </div>
+          <!-- Seller Card -->
+          <div class="seller-card seller-card-green">
+            <div class="seller-card-banner">
+              <img src="../assets/frontend/images/top-sellers/1.webp" alt="Phone Store Banner">
+            </div>
+            <div class="seller-card-info">
+              <div class="seller-card-logo">
+                <img src="../assets/frontend/images/products/4.webp" alt="Phone Store Logo">
+              </div>
+              <div>
+                <div class="seller-card-title">Phone Store</div>
+                <div class="seller-card-rating">
+                  <span class="rating-value">0.0</span>
+                  <span class="star">&#9733;</span>
+                  <span class="rating-label">Rating</span>
+                </div>
+              </div>
+            </div>
+            <div class="seller-card-meta">
+              <span><b>0</b> Reviews</span>
+              <span><b>13</b> Products</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Top Sellers Section End -->
+
+    <!-- Deal of the Day & Latest Products Section Start -->
+    <section class="deal-latest-section my-5 py-4">
+      <div class="container">
+        <div class="deal-latest-row clearance-sale-section">
+          <!-- Left: Deal of the Day -->
+          <div class="deal-of-day-left">
+            <div class="deal-of-day-card">
+              <h3 class="deal-title">DEAL OF THE DAY</h3>
+              <div class="deal-product">
+                <div class="deal-img-badge-wrapper">
+                  <span class="discount-badge">-30%</span>
+                  <img src="../assets/frontend/images/products/1.webp" alt="Exquisite 18K White Gold Diamond Necklace Set" class="deal-img">
+                </div>
+                <div class="deal-product-title">Exquisite 18K White Gold Diamond Necklace Set</div>
+                <div class="deal-prices">
+                  <span class="old-price">$2,400.00</span>
+                  <span class="new-price">$1,680.00</span>
+                </div>
+                <button class="btn btn-primary">BUY NOW</button>
+              </div>
+            </div>
+            <div class="deal-timer-outer mt-5">
+              <div class="flash-deal-timer">
+                <div class="timer-box"><span class="timer-value" id="deal-days">08</span><span class="timer-label">Days</span></div>
+                <span class="timer-sep">:</span>
+                <div class="timer-box"><span class="timer-value" id="deal-hours">12</span><span class="timer-label">Hours</span></div>
+                <span class="timer-sep">:</span>
+                <div class="timer-box"><span class="timer-value" id="deal-minutes">45</span><span class="timer-label">Minutes</span></div>
+                <span class="timer-sep">:</span>
+                <div class="timer-box"><span class="timer-value" id="deal-seconds">23</span><span class="timer-label">Seconds</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Right: Latest Products -->
+          <div class="latest-products-col">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2 class="mb-0">Latest products</h2>
+              <a href="#" class="flash-deal-viewall">View All <span>&#8594;</span></a>
+            </div>
+            <div class="latest-products-list">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Deal of the Day & Latest Products Section End -->
+
+    <!-- New Arrivals Section Start -->
+    <section class="new-arrivals-section my-5">
+      <div class="container">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="swiper new-arrivals-swiper">
+          <div class="swiper-wrapper py-4">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper navigation -->
+          <div class="swiper-button-next newarrivals-button-next"></div>
+          <div class="swiper-button-prev newarrivals-button-prev"></div>
+        </div>
+      </div>
+    </section>
+    <!-- New Arrivals Section End -->
+
+    <!-- Best Selling Section Start -->
+    <section class="new-arrivals-section my-5">
+      <div class="container">
+        <h2 class="section-title">Best Sellings Product</h2>
+        <div class="swiper new-arrivals-swiper">
+          <div class="swiper-wrapper py-4">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="arrival-card">
+                <img src="../assets/frontend/images/products/1.webp" alt="Women Beautiful White Sneakers">
+                <div>
+                  <div class="arrival-title my-1"><a href="">Women Beautiful White Sneakers</a></div>
+                  <div class="arrival-rating">⭐⭐⭐ (1)</div>
+                  <div class="arrival-price my-1"><span class="me-1">$70.00</span> $70.00 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper navigation -->
+          <div class="swiper-button-next newarrivals-button-next"></div>
+          <div class="swiper-button-prev newarrivals-button-prev"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Best Selling Section End -->
+
+    <!-- Brand Section Start -->
+    <section class="brands-section my-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="section-title mb-0">Brands</h2>
+          <a href="#" class="flash-deal-viewall">View All <span>&#8594;</span></a>
+        </div>
+        <div class="swiper brands-swiper pb-3">
+          <div class="swiper-wrapper">
+            <!-- Brand Slide Example -->
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 1">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-card">
+                <img src="../assets/frontend/images/brands/1.webp" alt="Brand 2">
+              </div>
+            </div>
+          </div>
+          <!-- Swiper navigation -->
+          <div class="swiper-button-next brands-button-next"></div>
+          <div class="swiper-button-prev brands-button-prev"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Brand Section End -->
+
+    <!-- Promo Image & Slider Section Start -->
+    <div class="promo-slider-section my-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <a href=""><img src="../assets/frontend/images/products/back.png" alt="Audio Product"></a>
+          </div>
+          <div class="col-12 col-md-6">
+            <a href=""><img src="../assets/frontend/images/banner/bg.webp" alt="Audio Product"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Promo Image & Slider Section End -->
+
+    <!-- Womens Fashion Section Start -->
+    <section class="clearance-sale-section my-5">
+      <div class="container">
+        <div class="clearance-sale-header d-flex justify-content-between align-items-center mb-4">
+          <h2> Women's Fashion </h2>
+          <a href="#" class="flash-deal-viewall">View All <span>&#8594;</span></a>
+        </div>
+        <div class="swiper clearance-swiper py-3">
+          <div class="swiper-wrapper">
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next clearance-swiper-next"></div>
+          <div class="swiper-button-prev clearance-swiper-prev"></div>
+          <!-- <div class="swiper-pagination clearance-swiper-pagination"></div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Womens Fashion Section End -->
+
+    <!--  Phone & Gadgets  Section Start -->
+    <section class="clearance-sale-section my-5">
+      <div class="container">
+        <div class="clearance-sale-header d-flex justify-content-between align-items-center mb-4">
+          <h2>  Phone & Gadgets  </h2>
+          <a href="#" class="flash-deal-viewall">View All <span>&#8594;</span></a>
+        </div>
+        <div class="swiper clearance-swiper py-3">
+          <div class="swiper-wrapper">
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card Example -->
+            <div class="swiper-slide">
+              <div class="clearance-product-card">
+                <span class="discount-badge">-10%</span>
+                <div class="product-img-wrapper">
+                  <img src="../assets/frontend/images/products/1.webp" alt="Notebook Laptops" class="product-img">
+                  <div class="img-hover-overlay"></div>
+                  <button class="eye-btn"><i class="fa fa-eye"></i></button>
+                </div>
+                <div class="product-title">Notebook Laptops</div>
+                <div class="product-rating">
+                  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="review-count">(1)</span>
+                </div>
+                <div class="product-prices">
+                  <span class="old-price">$419.00</span>
+                  <span class="new-price">$377.10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next clearance-swiper-next"></div>
+          <div class="swiper-button-prev clearance-swiper-prev"></div>
+          <!-- <div class="swiper-pagination clearance-swiper-pagination"></div> -->
+        </div>
+      </div>
+    </section>
+    <!--  Phone & Gadgets  Section End -->
+
+    <!-- Feature Info Section Start -->
+    <div class="feature-info-section my-5">
+      <div class="container">
+        <div class="feature-info-wrapper d-flex flex-wrap justify-content-between align-items-center p-5">
+          <div class="feature-info-item text-center flex-fill">
+            <div class="feature-info-icon mx-auto mb-3">
+              <i class="fa fa-shipping-fast"></i>
+            </div>
+            <div class="feature-info-label">Fast Delivery all across the country</div>
+          </div>
+          <div class="feature-info-divider"></div>
+          <div class="feature-info-item text-center flex-fill">
+            <div class="feature-info-icon mx-auto mb-3">
+              <i class="fa fa-credit-card"></i>
+            </div>
+            <div class="feature-info-label">Safe Payment</div>
+          </div>
+          <div class="feature-info-divider"></div>
+          <div class="feature-info-item text-center flex-fill">
+            <div class="feature-info-icon mx-auto mb-3">
+              <i class="fa fa-undo"></i>
+            </div>
+            <div class="feature-info-label">7 Days Return Policy</div>
+          </div>
+          <div class="feature-info-divider"></div>
+          <div class="feature-info-item text-center flex-fill">
+            <div class="feature-info-icon mx-auto mb-3">
+              <i class="fa fa-award"></i>
+            </div>
+            <div class="feature-info-label">100% Authentic Products</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Feature Info Section End -->
+
+    <!-- Quick Links Section Start -->
+    <div class="quick-links-section my-5">
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="quick-link-card text-center p-4 h-100">
+              <a href="">
+                <div class="quick-link-icon mb-3 mx-auto">
+                <i class="fa fa-building"></i>
+                </div>
+                <div class="quick-link-title fw-bold mb-1">About us</div>
+                <div class="quick-link-desc">Know about our company more.</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="quick-link-card text-center p-4 h-100">
+              <a href="">
+                <div class="quick-link-icon mb-3 mx-auto">
+                  <i class="fa fa-headset"></i>
+                </div>
+                <div class="quick-link-title fw-bold mb-1">Contact Us</div>
+                <div class="quick-link-desc">We are Here to Help</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="quick-link-card text-center p-4 h-100">
+              <a href="">
+                <div class="quick-link-icon mb-3 mx-auto">
+                  <i class="fa fa-question-circle"></i>
+                </div>
+                <div class="quick-link-title fw-bold mb-1">FAQ</div>
+                <div class="quick-link-desc">Get all Answers</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="quick-link-card text-center p-4 h-100">
+              <a href="">
+                <div class="quick-link-icon mb-3 mx-auto">
+                  <i class="fa fa-blog"></i>
+                </div>
+                <div class="quick-link-title fw-bold mb-1">Blog</div>
+                <div class="quick-link-desc">Check Latest Blogs</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Quick Links Section End -->
+
+   <!-- Modern Glassy Footer Start -->
+   <footer class="creative-footer position-relative mt-5 pb-3">
+    <div class="footer-divider position-absolute w-100" style="top: -40px; left: 0; z-index: 1;">
+      <svg viewBox="0 0 1440 80" width="100%" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 Q720,0 1440,80 L1440,0 L0,0 Z" fill="var(--primary)" opacity="0.12"/>
+      </svg>
+    </div>
+    <div class="container position-relative" style="z-index:2;">
+      <div class="footer-glass row g-4 py-5 px-2">
+        <!-- Brand & App Download -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+          <div class="footer-logo-badge mb-3">
+            <img src="" alt="logo">
+          </div>
+          <div class="footer-brand-title mb-2">TechValley</div>
+          <div class="footer-brand-desc mb-3">Empowering your shopping journey with trust and innovation.</div>
+          <div class="footer-app-title mb-2 fw-semibold text-primary"><i class="fa fa-mobile-alt me-2"></i>Download Our App</div>
+          <div class="footer-app-btns d-flex gap-2 my-3">
+            <a href="#" class="footer-app-btn"><i class="fab fa-apple me-2"></i>App Store</a>
+            <a href="#" class="footer-app-btn"><i class="fab fa-google-play me-2"></i>Google Play</a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-links-title mb-3">Quick Links</div>
+          <ul class="footer-links list-unstyled mb-0">
+            <li><a href="#"><i class="fa fa-user me-2"></i>Profile Info</a></li>
+            <li><a href="#"><i class="fa fa-bolt me-2"></i>Flash Deal</a></li>
+            <li><a href="#"><i class="fa fa-star me-2"></i>Featured Products</a></li>
+            <li><a href="#"><i class="fa fa-fire me-2"></i>Best Selling Product</a></li>
+            <li><a href="#"><i class="fa fa-clock me-2"></i>Latest Products</a></li>
+            <li><a href="#"><i class="fa fa-thumbs-up me-2"></i>Top Rated Product</a></li>
+            <li><a href="#"><i class="fa fa-truck me-2"></i>Track Order</a></li>
+          </ul>
+        </div>
+        <!-- Other Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-links-title mb-3">Other</div>
+          <ul class="footer-links list-unstyled mb-0">
+            <li><a href="#"><i class="fa fa-info-circle me-2"></i>About Us</a></li>
+            <li><a href="#"><i class="fa fa-file-contract me-2"></i>Terms & Conditions</a></li>
+            <li><a href="#"><i class="fa fa-user-secret me-2"></i>Privacy Policy</a></li>
+            <li><a href="#"><i class="fa fa-undo me-2"></i>Refund Policy</a></li>
+            <li><a href="#"><i class="fa fa-exchange-alt me-2"></i>Return Policy</a></li>
+            <li><a href="#"><i class="fa fa-ban me-2"></i>Cancellation Policy</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-links-title mb-3">Newsletter</div>
+          <div class="footer-newsletter-desc mb-2">Subscribe to our new channel to get latest updates</div>
+          <form class="footer-newsletter-form d-flex flex-column gap-2">
+            <div class="input-group">
+              <input type="email" class="form-control rounded-start-pill" placeholder="Your Email Address" required>
+              <button class="btn btn-primary rounded-end-pill px-3" type="submit"><i class="fa fa-paper-plane"></i> Subscribe</button>
+            </div>
+          </form>
+        </div>
+        <!-- Contact & Address -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-links-title mb-3">Contact</div>
+          <ul class="footer-links list-unstyled mb-3">
+            <li><i class="fa fa-phone me-2"></i>+00xxxxxxxxxxxx</li>
+            <li><i class="fa fa-envelope me-2"></i>c*********@6amtech.com</li>
+            <li><i class="fa fa-ticket-alt me-2"></i>Support ticket</li>
+          </ul>
+          <div class="footer-links-title mb-2">Address</div>
+          <div class="footer-address"><i class="fa fa-map-marker-alt me-2"></i>Kingston, New York 12401 United States</div>
+        </div>
+      </div>
+      <div class="footer-social-bar d-flex justify-content-between gap-3 mt-4 mb-2">
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="footer-social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-icon" aria-label="Google"><i class="fab fa-google"></i></a>
+          <a href="#" class="footer-social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <div class="footer-bottom text-center d-flex align-items-center">
+          <span>&copy; 2025 Techvalley. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Modern Glassy Footer End -->
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+    <!-- JS Libraries -->
+    <script src="../assets/frontend/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sadia-haque207/Techvalley@main/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sadia-haque207/Techvalley@main/cart.js"></script>
+    <script src="../assets/frontend/js/vendor/all.min.js"></script>
+    <script src="../assets/frontend/js/vendor/bootstrap.min.js"></script>
+    <script src="../assets/frontend/js/vendor/swiper-bundle.min.js"></script>
+
+    
+</body>
+</html>
